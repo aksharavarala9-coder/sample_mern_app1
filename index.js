@@ -1,17 +1,19 @@
 let express=require('express');
 let app=express();
-//localhost:3000/addstudents
-app.post("/addStudents",(req,res)=>{
-    res.send("Student added successfully");
-});
-//localhost:3000/getstudents
-app.get("/getStudents",(req,res)=>{
-    res.send(" get students called ");
-});
-//localhost:3000/updatestudents
-app.put("/updateStudents",(req,res)=>{
-    res.send(" update students called ");
-});
+let mongoose=require('mongoose');
+let emproute=require('./routes/emp_route');
+
+mongoose.connect("mongodb://localhost:27017/hrmanagement")
+ .then(()=>console.log("MongoDB connected successfully"))
+ .catch((err)=>console.log(err));
+app.use(express.json()); //used to collect input from UI as json data
+
+app.use("/api/emp",emproute);
+//localhost:3000/api/emp/register =>post
+//localhost:3000/api/emp/login =>post
+//localhost:3000/api/emp/viewtask =>get
+//localhost:3000/api/emp/updateprofile =>patch
+
 
 //run server
 app.listen(3000,()=>{   
