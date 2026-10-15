@@ -1,21 +1,25 @@
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import Home from "./pages/Home"
-import About from "./pages/About" 
-import contact from "./pages/contact"
-import {Routes,Route} from'react-router-dom'
+import Header from "./assets/components/Header.jsx";
+import Footer from "./assets/components/Footer.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/contact.jsx";
+
+import { Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <div>
-      <Header></Header>
+      <Header />
+
       <Routes>
-        <Route path="/" element='{<Home></Home>}'></Route>
-        <Route path="/about" element='{<About></About>}'></Route>
-        <Route path="/contact" element='{<Contact></Contact>}'></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-     <Footer></Footer>
-      </div>
-  )
+
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
