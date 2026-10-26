@@ -1,7 +1,9 @@
 let express=require('express');
+let cors=require('cors');
 let mongoose=require('mongoose');
 
 let app=express();
+app.use(cors());
 
 let emproutes=require('./routes/emp_route');
 
