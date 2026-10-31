@@ -1,0 +1,92 @@
+
+.about-page {
+  padding-bottom: 50px;
+  background-color: #f5f6fa;
+}
+
+.about-heading {
+  background-color: #202b50;
+  color: white;
+  text-align: center;
+  padding: 55px 15px;
+}
+
+.about-heading h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.about-heading p {
+  margin: 0;
+  color: #e0e3ed;
+}
+
+.about-content {
+  padding-top: 55px;
+  padding-bottom: 35px;
+}
+
+.about-content h2 {
+  color: #202b50;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.about-card {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  border-left: 5px solid #f4c95d;
+}
+
+.about-card h3 {
+  color: #202b50;
+  font-size: 21px;
+}
+
+.about-card p {
+  margin: 0;
+}
+
+.about-features {
+  padding-top: 25px;
+  text-align: center;
+}
+
+.about-features h2 {
+  color: #202b50;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.about-feature {
+  background: white;
+  padding: 30px 15px;
+  border-radius: 10px;
+  height: 100%;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.about-feature h4 {
+  color: #202b50;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.about-feature p {
+  color: #666;
+  margin: 10px 0 0;
+}
+
+@media(max-width: 768px) {
+  .about-heading h1 {
+    font-size: 29px;
+  }
+}

@@ -1,0 +1,111 @@
+
+.contact-page {
+  background-color: #f5f6fa;
+  padding-bottom: 55px;
+}
+
+.contact-heading {
+  background-color: #202b50;
+  color: white;
+  text-align: center;
+  padding: 55px 15px;
+}
+
+.contact-heading h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.contact-heading p {
+  color: #e0e3ed;
+  margin: 0;
+}
+
+.contact-container {
+  padding-top: 50px;
+}
+
+.contact-info {
+  background-color: #202b50;
+  color: white;
+  padding: 35px 25px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.contact-info h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.contact-info > p {
+  color: #d5d9e7;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  margin-bottom: 25px;
+}
+
+.contact-item h5 {
+  color: #f4c95d;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.contact-item p {
+  color: #e0e3ed;
+  margin: 5px 0 0;
+}
+
+.contact-form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.contact-form-card h2 {
+  color: #202b50;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.contact-form-card .form-control {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.contact-form-card .form-control:focus {
+  border-color: #202b50;
+  box-shadow: 0 0 0 0.15rem rgba(32,43,80,0.12);
+}
+
+.contact-button {
+  background-color: #202b50;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.contact-button:hover {
+  background-color: #f4c95d;
+  color: #202b50;
+}
+
+@media(max-width: 768px) {
+  .contact-heading h1 {
+    font-size: 29px;
+  }
+
+  .contact-form-card {
+    padding: 22px;
+  }
+}

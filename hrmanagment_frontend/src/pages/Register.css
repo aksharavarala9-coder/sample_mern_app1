@@ -1,0 +1,151 @@
+
+.register-page {
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 15px;
+  background-color: #f5f6fa;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.register-heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.register-logo {
+  width: 55px;
+  height: 55px;
+  background: #202b50;
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto 15px;
+}
+
+.register-heading h2 {
+  color: #202b50;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.register-heading p {
+  color: #777;
+  font-size: 14px;
+}
+
+.register-input-group {
+  margin-bottom: 17px;
+}
+
+.register-input-group label {
+  display: block;
+  color: #202b50;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.register-input-group input,
+.register-input-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  background: white;
+}
+
+.register-input-group input:focus,
+.register-input-group select:focus {
+  border-color: #202b50;
+}
+
+.register-password-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.register-password-box:focus-within {
+  border-color: #202b50;
+}
+
+.register-password-box input {
+  border: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.register-password-box input:focus {
+  border: none;
+  outline: none;
+}
+
+.register-password-box button {
+  border: none;
+  background: white;
+  color: #202b50;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.register-submit {
+  width: 100%;
+  padding: 13px;
+  background: #202b50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.register-submit:hover {
+  background: #f4c95d;
+  color: #202b50;
+}
+
+.register-message {
+  text-align: center;
+  color: #202b50;
+  font-size: 14px;
+}
+
+.register-login-text {
+  text-align: center;
+  margin-top: 22px;
+  color: #666;
+  font-size: 14px;
+}
+
+.register-login-text a {
+  color: #202b50;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-login-text a:hover {
+  color: #c69a21;
+}
+
+@media(max-width: 480px) {
+  .register-card {
+    padding: 25px 20px;
+  }
+}

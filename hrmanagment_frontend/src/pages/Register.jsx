@@ -1,133 +1,160 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Register.css";
 
 function Register() {
-    let [name, setName] = useState("");
-    let [email, setEmail] = useState("");
-    let [password, setPassword] = useState("");
-    let [role, setRole] = useState("");
-    let [message, setMessage] = useState("");
 
-    let handleRegister = async (event) => {
-        event.preventDefault();
-        setMessage("Registering...");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const [message, setMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-        try {
-            let res = await fetch(
-                "http://localhost:3000/api/emp/register",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        name: name,
-                        emailid: email,
-                        password: password,
-                        role: role
-                    })
-                }
-            );
+  const handleRegister = async (event) => {
+    event.preventDefault();
 
-            let data = await res.json();
+    setMessage("Registering...");
 
-            if (res.ok) {
-                console.log("Data inserted successfully");
-                console.log(data);
-
-                setMessage(
-                    data.message || "Registration successful!"
-                );
-
-                setName("");
-                setEmail("");
-                setPassword("");
-                setRole("");
-            } else {
-                setMessage(
-                    data.message || "Registration failed!"
-                );
-                console.log(data);
-            }
-        } catch (error) {
-            console.log("Error:", error);
-            setMessage(
-                "Cannot connect to server. Check your backend."
-            );
+    try {
+      const res = await fetch(
+        "http://localhost:3000/api/emp/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: name,
+            emailid: email,
+            password: password,
+            role: role
+          })
         }
-    };
+      );
 
-    return (
-        <div className="register-container">
-            <h1>Register</h1>
+      const data = await res.json();
 
-            <form onSubmit={handleRegister}>
-                <input
-                    type="text"
-                    placeholder="Enter name"
-                    value={name}
-                    onChange={(event) =>
-                        setName(event.target.value)
-                    }
-                    required
-                />
+      if (res.ok) {
 
-                <br /><br />
+        setMessage("Registration successful!");
 
-                <input
-                    type="email"
-                    placeholder="Enter email"
-                    value={email}
-                    onChange={(event) =>
-                        setEmail(event.target.value)
-                    }
-                    required
-                />
+        setName("");
+        setEmail("");
+        setPassword("");
+        setRole("");
 
-                <br /><br />
+      } else {
+        setMessage(data.msg || data.message || "Registration failed!");
+      }
 
-                <input
-                    type="password"
-                    placeholder="Enter password"
-                    value={password}
-                    onChange={(event) =>
-                        setPassword(event.target.value)
-                    }
-                    required
-                />
+    } catch (error) {
+      console.log("Registration error:", error);
 
-                <br /><br />
+      setMessage(
+        "Cannot connect to server. Please check backend."
+      );
+    }
+  };
 
-                <select
-                    value={role}
-                    onChange={(event) =>
-                        setRole(event.target.value)
-                    }
-                    required
-                >
-                    <option value="" disabled>
-                        Choose your role
-                    </option>
+  return (
+    <main className="register-page">
 
-                    <option value="HR">
-                        HR
-                    </option>
+      <div className="register-card">
 
-                    <option value="EMPLOYEE">
-                        Employee
-                    </option>
-                </select>
+        <div className="register-heading">
 
-                <br /><br />
+          <div className="register-logo">A</div>
 
-                <button type="submit">
-                    Register
-                </button>
-            </form>
+          <h2>Create Your Account</h2>
 
-            <p>{message}</p>
+          <p>Register to get started with AKSHARA</p>
+
         </div>
-    );
+
+        <form onSubmit={handleRegister}>
+
+          <div className="register-input-group">
+            <label>Full Name</label>
+
+            <input
+              type="text"
+              placeholder="Enter your full name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              required
+            />
+          </div>
+
+          <div className="register-input-group">
+            <label>Email Address</label>
+
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              required
+            />
+          </div>
+
+          <div className="register-input-group">
+            <label>Password</label>
+
+            <div className="register-password-box">
+
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Create your password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                required
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "Hide" : "Show"}
+              </button>
+
+            </div>
+          </div>
+
+          <div className="register-input-group">
+            <label>Select Your Role</label>
+
+            <select
+              value={role}
+              onChange={(event) => setRole(event.target.value)}
+              required
+            >
+              <option value="">Choose your role</option>
+              <option value="HR">HR</option>
+              <option value="EMPLOYEE">Employee</option>
+            </select>
+          </div>
+
+          {message && (
+            <p className="register-message">{message}</p>
+          )}
+
+          <button type="submit" className="register-submit">
+            Create Account
+          </button>
+
+        </form>
+
+        <p className="register-login-text">
+          Already have an account?
+          <Link to="/login"> Login Here</Link>
+        </p>
+
+      </div>
+
+    </main>
+  );
 }
 
 export default Register;
